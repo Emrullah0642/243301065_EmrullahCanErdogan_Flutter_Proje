@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "598943227265",
+    "project_id": "evrak-takip-18cca",
+    "storage_bucket": "evrak-takip-18cca.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:598943227265:android:bba8ed3ac9f213160c5c80",
+        "android_client_info": {
+          "package_name": "com.emrullah.evrak_takip"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyACOu_9vkRlOb97kNFT2wgWeW0pWPxk0E8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
