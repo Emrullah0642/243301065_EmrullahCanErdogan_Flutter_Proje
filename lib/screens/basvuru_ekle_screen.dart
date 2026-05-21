@@ -75,6 +75,7 @@ class _BasvuruEkleScreenState extends State<BasvuruEkleScreen> {
           tarih: DateTime.now(),
           dosyaUrl: link.isEmpty ? null : link,
           dosyaAdi: link.isEmpty ? null : 'Belge Linki',
+          ogrenciNo: widget.kullanici.ogrenciNo,
         );
         await _basvuruService.basvuruGuncelle(guncellenmis);
       } else {
@@ -89,6 +90,7 @@ class _BasvuruEkleScreenState extends State<BasvuruEkleScreen> {
           tarih: DateTime.now(),
           dosyaUrl: link.isEmpty ? null : link,
           dosyaAdi: link.isEmpty ? null : 'Belge Linki',
+          ogrenciNo: widget.kullanici.ogrenciNo,
         );
         await _basvuruService.basvuruOlustur(yeni);
       }

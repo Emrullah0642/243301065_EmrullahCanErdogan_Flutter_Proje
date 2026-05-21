@@ -137,6 +137,8 @@ class _BasvuruDetayScreenState extends State<BasvuruDetayScreen> {
           children: [
             _bilgiKarti('Evrak Türü', b.evrakTuru, Icons.description),
             _bilgiKarti('Öğrenci', b.ogrenciAd, Icons.person),
+            if (b.ogrenciNo != null && b.ogrenciNo!.isNotEmpty)
+              _bilgiKarti('Öğrenci No', b.ogrenciNo!, Icons.badge),
             _bilgiKarti('Tarih', tarihStr, Icons.calendar_today),
             _bilgiKarti('Açıklama', b.aciklama, Icons.notes),
             const SizedBox(height: 8),
