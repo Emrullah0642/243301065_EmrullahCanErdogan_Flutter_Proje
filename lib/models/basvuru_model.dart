@@ -9,6 +9,7 @@ class BasvuruModel {
   final String? danismanYorum;
   final String danismanEmail;
   final bool arsivlendi;
+  final String? ogrenciNo;
   final String? dosyaUrl;      // öğrencinin eklediği dosya
   final String? dosyaAdi;
   final String? danismanDosyaUrl;  // danışmanın yanıt dosyası
@@ -25,6 +26,7 @@ class BasvuruModel {
     required this.danismanEmail,
     this.danismanYorum,
     this.arsivlendi = false,
+    this.ogrenciNo,
     this.dosyaUrl,
     this.dosyaAdi,
     this.danismanDosyaUrl,
@@ -43,6 +45,7 @@ class BasvuruModel {
       danismanEmail: map['danismanEmail'] ?? '',
       danismanYorum: map['danismanYorum'],
       arsivlendi: map['arsivlendi'] ?? false,
+      ogrenciNo: map['ogrenciNo'],
       dosyaUrl: map['dosyaUrl'],
       dosyaAdi: map['dosyaAdi'],
       danismanDosyaUrl: map['danismanDosyaUrl'],
@@ -61,6 +64,7 @@ class BasvuruModel {
       'danismanEmail': danismanEmail,
       'danismanYorum': danismanYorum,
       'arsivlendi': arsivlendi,
+      'ogrenciNo': ogrenciNo,
       'dosyaUrl': dosyaUrl,
       'dosyaAdi': dosyaAdi,
       'danismanDosyaUrl': danismanDosyaUrl,

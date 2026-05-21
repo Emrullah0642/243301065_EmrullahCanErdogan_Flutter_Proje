@@ -14,6 +14,7 @@ class AuthService {
     required String email,
     required String sifre,
     required String rol,
+    String? ogrenciNo,
   }) async {
     final cred = await _auth.createUserWithEmailAndPassword(
       email: email,
@@ -24,6 +25,7 @@ class AuthService {
       ad: ad,
       email: email,
       rol: rol,
+      ogrenciNo: ogrenciNo,
     );
     await _db.collection('kullanicilar').doc(cred.user!.uid).set(kullanici.toMap());
     await LogService.kaydet(cred.user!.uid, 'Kayıt oldu: $email (rol: $rol)');

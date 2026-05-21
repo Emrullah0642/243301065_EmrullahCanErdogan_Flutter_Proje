@@ -13,6 +13,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
   final _adController = TextEditingController();
   final _emailController = TextEditingController();
   final _sifreController = TextEditingController();
+  final _ogrenciNoController = TextEditingController();
   final _authService = AuthService();
   String _seciliRol = 'ogrenci';
   bool _yukleniyor = false;
@@ -26,6 +27,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
         email: _emailController.text.trim(),
         sifre: _sifreController.text.trim(),
         rol: _seciliRol,
+        ogrenciNo: _seciliRol == 'ogrenci' ? _ogrenciNoController.text.trim() : null,
       );
       if (mounted) Navigator.pop(context);
     } catch (e) {
@@ -82,6 +84,25 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   obscureText: true,
                   validator: (v) => v!.length < 6 ? 'En az 6 karakter' : null,
                 ),
+                const SizedBox(height: 16),
+                if (_seciliRol == 'ogrenci') ...[
+                  const SizedBox(height: 16),
+                  TextFormField(
+                    controller: _ogrenciNoController,
+                    decoration: const InputDecoration(
+                      labelText: 'Öğrenci Numarası',
+                      border: OutlineInputBorder(),
+                      prefixIcon: Icon(Icons.badge),
+                    ),
+                    keyboardType: TextInputType.number,
+                    validator: (v) {
+                      if (_seciliRol == 'ogrenci' && (v == null || v.trim().isEmpty)) {
+                        return 'Öğrenci numarası giriniz';
+                      }
+                      return null;
+                    },
+                  ),
+                ],
                 const SizedBox(height: 16),
                 const Text('Rol Seçiniz:', style: TextStyle(fontWeight: FontWeight.bold)),
                 const SizedBox(height: 8),
